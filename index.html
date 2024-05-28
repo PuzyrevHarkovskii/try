@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      .question {
+        margin-bottom: 20px;
+      }
+      .result {
+        display: none;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+      .correct {
+        color: green;
+      }
+      .incorrect {
+        color: red;
+      }
+    </style>
+    <script>
+      function checkAnswer(questionNumber, correctAnswer) {
+        const userAnswer = document
+          .getElementById("answer" + questionNumber)
+          .value.trim();
+        const resultElement = document.getElementById(
+          "result" + questionNumber
+        );
+        if (userAnswer.toLowerCase() === correctAnswer.toLowerCase()) {
+          resultElement.textContent = "Правильно!";
+          resultElement.className = "result correct";
+        } else {
+          resultElement.textContent =
+            "Неправильно! Правильный ответ: " + correctAnswer;
+          resultElement.className = "result incorrect";
+        }
+        resultElement.style.display = "block";
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Тест на HTML, JS, CSS</h1>
+    <div class="question">
+      <p>
+        Выберите протокол, который определяет, как отвечает на запросы
+        веб-сервер.
+      </p>
+      <input type="text" id="answer1" />
+      <button onclick="checkAnswer(1, 'HTTP')">Проверить</button>
+      <p id="result1" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Назовите расширение файла, содержащего ES2015-модуль (т.е. модуль нового
+        типа, позволяющий использовать import/export).
+      </p>
+      <input type="text" id="answer2" />
+      <button onclick="checkAnswer(2, 'mjs')">Проверить</button>
+      <p id="result2" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Каков номер порта, используемый для взаимодействия с веб-сервером по
+        протоколу HTTPS по умолчанию?
+      </p>
+      <input type="text" id="answer3" />
+      <button onclick="checkAnswer(3, '443')">Проверить</button>
+      <p id="result3" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        С помощью какой спецификации описываются на YAML API-шлюзы при
+        использовании технологий Yandex Serverless?
+      </p>
+      <input type="text" id="answer4" />
+      <button onclick="checkAnswer(4, 'OpenAPI')">Проверить</button>
+      <p id="result4" class="result"></p>
+    </div>
+    <div class="question">
+      <p>Какой тип структуры возвращает метод document.querySelectorAll?</p>
+      <input type="text" id="answer5" />
+      <button onclick="checkAnswer(5, 'NodeList')">Проверить</button>
+      <p id="result5" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Какой пакет middleware, поставляемый разработчиками Express, позволяет
+        разрешить запросы с разных доменов / серверов с помощью заголовков
+        Access-Control-Allow-*?
+      </p>
+      <input type="text" id="answer6" />
+      <button onclick="checkAnswer(6, 'cors')">Проверить</button>
+      <p id="result6" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Какой из перечисленных глаголов является методом HTTP, предназначенным
+        для передачи данных в теле сообщения?
+      </p>
+      <input type="text" id="answer7" />
+      <button onclick="checkAnswer(7, 'POST')">Проверить</button>
+      <p id="result7" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Как в JavaScript называется функция, объявляемая со знаком звёздочки,
+        вызов которой создаёт экземпляр итератора?
+      </p>
+      <input type="text" id="answer8" />
+      <button onclick="checkAnswer(8, 'генератор')">Проверить</button>
+      <p id="result8" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Выберите язык, главной областью применения которого является написание
+        скриптов, работающих на бэкэнде.
+      </p>
+      <input type="text" id="answer9" />
+      <button onclick="checkAnswer(9, 'PHP')">Проверить</button>
+      <p id="result9" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Какой код (число) ответа (статуса) HTTP означает, что при обработке
+        запроса веб-сервер не смог найти запрашиваемый ресурс?
+      </p>
+      <input type="text" id="answer10" />
+      <button onclick="checkAnswer(10, '404')">Проверить</button>
+      <p id="result10" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Какая функция модуля os платформы Node.js позволяет определить
+        количество доступных ядер процессора? Дайте ответ без скобок и указания
+        родительского объекта, только в виде имени функции
+      </p>
+      <input type="text" id="answer11" />
+      <button onclick="checkAnswer(11, 'cpus')">Проверить</button>
+      <p id="result11" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Предварительная публикация текста научных исследований, статьи или
+        доклада средствами оперативной полиграфии небольшим тиражом, до выхода в
+        свет издания, в котором они могут быть помещены - это ... (1 слово,
+        именительный падеж, единственное число)
+      </p>
+      <input type="text" id="answer12" />
+      <button onclick="checkAnswer(12, 'препринт')">Проверить</button>
+      <p id="result12" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Как по-другому называется безымянная функция (см. пример ниже), что
+        отсылает к функциональному исчислению, созданному Алонзо Чёрчем?
+        (x=>x*x)(5). Сформулируйте ответ в виде одной буквы.
+      </p>
+      <input type="text" id="answer13" />
+      <button onclick="checkAnswer(13, 'λ')">Проверить</button>
+      <p id="result13" class="result"></p>
+    </div>
+    <div class="question">
+      <p>Как называется первый уровень стандарта кодинга на PHP?</p>
+      <input type="text" id="answer14" />
+      <button onclick="checkAnswer(14, 'PSR-1')">Проверить</button>
+      <p id="result14" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Откройте борд
+        <a href="http://kodaktor.ru/g/css_724cd" target="_blank"
+          >http://kodaktor.ru/g/css_724cd</a
+        >. Напишите номер строки, где задаются округлые границы таблицы. Вам
+        нужно написать ТОЛЬКО число.
+      </p>
+      <input type="text" id="answer15" />
+      <button onclick="checkAnswer(15, '20')">Проверить</button>
+      <p id="result15" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Какой код ответа по протоколу HTTP означает, что новый ресурс успешно
+        создан?
+      </p>
+      <input type="text" id="answer16" />
+      <button onclick="checkAnswer(16, '201')">Проверить</button>
+      <p id="result16" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Веб-сервер на Express развёрнут на localhost с портом 4321. Подключены
+        только два маршрута: .all(/./, r => r.res.send('one')) и .all('/a', r =>
+        r.res.send('two')) Что выдаст сервер по запросу localhost:4321/a?
+      </p>
+      <input type="text" id="answer17" />
+      <button onclick="checkAnswer(17, 'one')">Проверить</button>
+      <p id="result17" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        В браузерах каким должно быть значение атрибута type элемента script,
+        чтобы в содержимом этого элемента можно было импортировать
+        экспортированные другим сценарием сущности?
+      </p>
+      <input type="text" id="answer18" />
+      <button onclick="checkAnswer(18, 'module')">Проверить</button>
+      <p id="result18" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Как называется разрабатываемый фирмой Oracle программный продукт
+        виртуализации для операционных систем Microsoft Windows, Linux, FreeBSD,
+        macOS, Solaris/OpenSolaris, ReactOS, DOS и других, созданный компанией
+        Innotek в 2007 г. и доступный по лицензии GNU GPL 2?
+      </p>
+      <input type="text" id="answer19" />
+      <button onclick="checkAnswer(19, 'VirtualBox')">Проверить</button>
+      <p id="result19" class="result"></p>
+    </div>
+    <div class="question">
+      <p>
+        Каков номер порта, используемый для взаимодействия с веб-сервером по
+        протоколу HTTP по умолчанию?
+      </p>
+      <input type="text" id="answer20" />
+      <button onclick="checkAnswer(20, '80')">Проверить</button>
+      <p id="result20" class="result"></p>
+    </div>
+  </body>
+</html>
